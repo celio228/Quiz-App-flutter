@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide Theme;
 import 'package:provider/provider.dart';
+import 'package:quiz_app/providers/question_provider.dart';
 import '../providers/quiz_provider.dart';
 import '../providers/auth_provider.dart';
 import '../models/theme_model.dart';
@@ -28,10 +29,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
   Future<void> _loadQuestions() async {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-    final quizProvider = Provider.of<QuizProvider>(context, listen: false);
+    final questionProvider = Provider.of<QuestionProvider>(context, listen: false);
     
     try {
-      final questions = await quizProvider.loadQuestions(widget.theme.id, authProvider.token!);
+      final questions = await questionProvider.loadQuestions(widget.theme.id, authProvider.token!);
       setState(() {
         _questions = questions;
         _isLoading = false;
