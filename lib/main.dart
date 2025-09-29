@@ -43,6 +43,7 @@ class _MyAppState extends State<MyApp> {
               ChangeNotifierProvider(create: (_) => QuestionProvider()),
             ],
             child: MaterialApp(
+              debugShowCheckedModeBanner: false, 
               title: 'Quiz App',
               theme: ThemeData(
                 primarySwatch: Colors.blue,

@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 20),
               Text(
-                'Quiz Éducatif',
+                'DevQuiz',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
